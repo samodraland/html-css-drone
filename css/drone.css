@@ -1,0 +1,243 @@
+*{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+html, body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: rgb(71,145,200);
+    background: linear-gradient(180deg, rgba(71,145,200,0.76234243697479) 0%, rgba(41,164,255,0.76234243697479) 43%, rgba(255,255,255,0) 100%);
+}
+
+#app{
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#drone{
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+}
+
+.body{
+    width: 120px;
+    height: 30px;
+    border-radius: 10px;
+    background: rgb(15, 32, 48);
+}
+
+.camera{
+    background: #0f2030;
+    width: 30px;
+    height: 10px;
+    top: 40px;
+    position: absolute;
+    right: 70px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 10px;
+}
+
+.right-foot{
+    width: 5px;
+    height: 40px;
+    background: #0f2030;
+    transform: rotate(-30deg);
+    position: absolute;
+    top: 25px;
+    left: 57%;;
+}
+.left-foot{
+    width: 5px;
+    height: 40px;
+    background: #0f2030;
+    transform: rotate(30deg);
+    position: absolute;
+    top: 25px;
+    left: 41%;
+}
+
+.wings{
+    display: flex;
+    width: 80px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.right{
+    width: 0;
+    height: 0; 
+    border-top: 8px solid transparent;
+    border-left: 125px solid rgb(15, 32, 48);
+    border-bottom: 8px solid transparent;
+}
+
+.left{
+    width: 0;
+    height: 0; 
+    border-top: 8px solid transparent;
+    border-right: 125px solid rgb(15, 32, 48);
+    border-bottom: 8px solid transparent;
+    justify-content: left;
+    align-items: left;
+    display: block;
+}
+
+.propeller{    
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+    width: 100px;
+    height: 50px;
+    top: 0;
+    position: absolute;
+}
+
+.p-left{
+    left: 0;
+}
+
+.p-left .blade{
+    margin:-20px 0 0 -120px;
+}
+
+.p-left .holder{
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid rgb(15, 32, 48);;
+    position: absolute;
+    left: -20px;
+    top: 15px;
+}
+
+.p-right{
+    right: 0;
+}
+
+.p-right .blade{
+    margin:-20px 0 0 120px;    
+}
+
+.p-right .holder{
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid rgb(15, 32, 48);;
+    position: absolute;
+    right: -20px;
+    top: 15px;
+}
+
+
+.blade{
+    width: 60px;
+    height: 3px;
+    background-color: black;
+
+    animation: animationFrames linear 0.1s;
+    animation-iteration-count: infinite;
+    transform-origin: 50% 50%;
+    -webkit-animation: animationFrames linear 0.1s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-transform-origin: 50% 50%;
+    -moz-animation: animationFrames linear 0.1s;
+    -moz-animation-iteration-count: infinite;
+    -moz-transform-origin: 50% 50%;
+    -o-animation: animationFrames linear 0.1s;
+    -o-animation-iteration-count: infinite;
+    -o-transform-origin: 50% 50%;
+    -ms-animation: animationFrames linear 0.1s;
+    -ms-animation-iteration-count: infinite;
+    -ms-transform-origin: 50% 50%;
+}
+
+@keyframes animationFrames{    
+    100% {
+      transform:  scaleX(1.0) ;
+    }
+    0% {
+      transform:  scaleX(0.7) ;
+    }
+  }
+
+.animateView1{
+    animation: motion1 15s linear infinite;
+}
+.animateView2{
+    animation: motion2 25s linear infinite;
+}
+.animateView3{
+    animation: motion3 35s linear infinite;
+}
+
+#view1{
+    background: url("../images/view1.png") 0 center repeat-x;
+    width: 5076px;
+    height: 157px;
+    position: absolute;
+    bottom: -60px;    
+}
+
+@keyframes motion1{
+    0%{
+      transform: translate3d(0, 0, 0);
+    }
+    100%{
+      transform: translate3d(-1692px, 0, 0);
+    }
+  }
+
+#view2{
+    background: url("../images/view2.png") 150px center repeat-x;
+    width: 5076px;
+    height: 156px;
+    position: absolute;
+    bottom: 5%;    
+}
+
+@keyframes motion2{
+    0%{
+      transform: translate3d(0, 0, 0);
+    }
+    100%{
+      transform: translate3d(-1692px, 0, 0);
+    }
+  }
+
+#view3{
+    background: url("../images/view3.png") 0 center repeat-x;
+    width: 5076px;
+    height: 170px;
+    position: absolute;
+    bottom: 15%;    
+}
+
+@keyframes motion3{
+    0%{
+      transform: translate3d(0, 0, 0);
+    }
+    100%{
+      transform: translate3d(-1692px, 0, 0);
+    }
+  }
